@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-section {
+            flex: 1;
+            background-color: #ffe4e1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .form-section h2 {
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .input-group .icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #888;
+        }
+
+        .input-group .icon:hover {
+            color: #000;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: none; /* Initially hidden */
+        }
+
+        button {
+            background: #b71c1c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover {
+            background-color: #d32f2f;
+        }
+
+        .form-section p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .form-section p a {
+            color: #b71c1c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-section p a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Image Section -->
+        <div class="image-section">
+            <img src="E:\3.1 sem\Project\project chatbot\Registering page\chatbot 3.png" alt="Doctor Illustration">
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="form-section">
+            <div class="logo">
+                <img src="E:\3.1 sem\Project\project chatbot\Registering page\logo.jpg" alt="RenalWise Logo">
+            </div>
+            <h2>Login</h2>
+            <form onsubmit="return handleFormSubmit(event)">
+                <div class="error-message" id="error-message">Invalid username or password. Please try again.</div>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" id="username" required>
+                    <span class="icon">👤</span>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" id="password" required>
+                    <span class="icon" onclick="togglePassword()">👁</span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't you have an account? <a href="#">Register</a></p>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Predefined valid credentials (replace with backend validation)
+            const validUsername = "admin";
+            const validPassword = "password123";
+
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === validUsername && password === validPassword) {
+                alert("Login successful!");
+                errorMessage.style.display = "none"; // Hide error message
+                // Redirect or perform successful login actions here
+            } else {
+                errorMessage.style.display = "block"; // Show error message
+            }
+        }
+    </script>
+</body>
+</html>
+
+

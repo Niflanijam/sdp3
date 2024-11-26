@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f9f9f9;
+        }
+
+        .image-section img {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 40px 30px;
+            background: #ffe4e1;
+            text-align: center;
+        }
+
+        .form-section .logo img {
+            width: 120px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            object-fit: cover;
+        }
+
+        .form-section h2 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .input-group.inline {
+            display: flex;
+            gap: 10px; /* Space between fields */
+        }
+
+        .input-group.inline input,
+        .input-group.inline select {
+            flex: 1; /* Equal width for inputs in the same row */
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .toggle-password:hover {
+            color: #d32f2f;
+        }
+
+        .password-helper,
+        .email-helper {
+            font-size: 12px;
+            color: #6b6b6b;
+            display: none;
+            text-align: left;
+        }
+
+        .password-helper strong,
+        .email-helper strong {
+            color: #b71c1c;
+        }
+
+        button {
+            background: #b71c1c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d32f2f;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        p a {
+            color: #b71c1c;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="chatbot 3.png" alt="Doctor Illustration">
+        </div>
+        <div class="form-section">
+            <div class="logo">
+                <img src="logo.jpg" alt="RenalWise Logo">
+            </div>
+            <h2>Register</h2>
+            <form action="#" method="post" autocomplete="off" onsubmit="return handleFormSubmit(event)">
+                <!-- Input fields for First Name and Last Name on the same line -->
+                <div class="input-group inline">
+                    <input type="text" placeholder="First Name" required autocomplete="off">
+                    <input type="text" placeholder="Last Name" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" required autocomplete="off">
+                </div>
+                <!-- Input fields for DOB and Gender on the same line -->
+                <div class="input-group inline">
+                    <input type="date" id="dob" placeholder="Select DOB" required autocomplete="off" onkeydown="return false">
+                    <select required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-Mail" required onfocus="showEmailHelper()" onblur="hideEmailHelper()" autocomplete="off">
+                </div>
+                <div class="email-helper" id="email-helper">
+                    Example: <strong>yourname@example.com</strong>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" minlength="8" required 
+                        onfocus="showPasswordHelper()" onblur="hidePasswordHelper()" autocomplete="off">
+                    <span class="toggle-password" onclick="togglePassword()">👁</span>
+                </div>
+                <div class="password-helper" id="password-helper">
+                    Use at least <strong>8 characters</strong>, including:
+                    <ul>
+                        <li>Uppercase letters</li>
+                        <li>Lowercase letters</li>
+                        <li>Numbers</li>
+                        <li>Symbols (e.g., !, @, #)</li>
+                    </ul>
+                </div>
+                <button type="submit">Register</button>
+                <p id="error-message" class="error-message"></p>
+            </form>
+            <p>Do you have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Set the max date for the date of birth field
+        window.onload = function() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1; // Months are zero-based
+            const day = today.getDate();
+            const maxDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            document.getElementById('dob').setAttribute('max', maxDate);
+        };
+
+        // Function to handle password toggle visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.textContent = '👁'; 
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.textContent = '👁';
+            }
+        }
+
+        // Show and hide password helper
+        function showPasswordHelper() {
+            document.getElementById('password-helper').style.display = 'block';
+        }
+
+        function hidePasswordHelper() {
+            document.getElementById('password-helper').style.display = 'none';
+        }
+
+        // Show and hide email helper
+        function showEmailHelper() {
+            document.getElementById('email-helper').style.display = 'block';
+        }
+
+        function hideEmailHelper() {
+            document.getElementById('email-helper').style.display = 'none';
+        }
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const dob = document.getElementById('dob').value;
+            const currentYear = new Date().getFullYear();
+            const birthYear = new Date(dob).getFullYear();
+            const errorMessage = document.getElementById('error-message');
+
+            if (birthYear > currentYear) {
+                errorMessage.textContent = "Birth year cannot be in the future. Please select a valid date.";
+                return false; // Prevent form submission
+            } else {
+                errorMessage.textContent = ""; // Clear error message
+                const confirmation = confirm("Do you want to save your username and password for future login?");
+                if (confirmation) {
+                    alert("Your details will be saved.");
+                } else {
+                    alert("Your details will not be saved.");
+                }
+                return true; // Allow form submission if everything is valid
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
