@@ -1,0 +1,284 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.logoimage img{
+
+
+    width:100px;
+    
+}
+
+.logoimage{
+    padding-left: 30px;
+    padding-top: 25px;
+
+}
+
+.account-arrow{
+    padding-top: 40px;
+    margin-left: 120px;
+}
+.account-arrow .arrow{
+  
+    cursor: pointer;
+    
+}
+.account-arrow .arrow1{
+
+    width: 35px;
+}
+
+
+.nav{
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+
+
+}
+
+.bar ul {
+display: flex;
+flex-direction: row;
+padding-top: 55px;
+padding-left:200px ;
+
+}
+
+.bar ul li{
+    padding-left: 80px;
+   
+    
+    list-style-type: none;
+    
+
+}
+.bar ul li a{
+
+    text-decoration: none;
+    color: #870F10;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.doctor-area{
+
+    height: 300px;
+    background-color: #FFD1CF;
+}
+.search-area{
+position: relative;
+display: inline-block;
+}
+
+.doctor-area p{
+
+    font-weight: bolder;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 40px;
+}
+.search-area input{
+    width: 415px;
+    height: 43px;
+    font-size: 20px;
+    
+    border-color: #FFD1CF;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+.search-area img{
+
+    width: 30px;
+    position: absolute;
+    margin-top: 55px;
+    right: 5px; 
+    pointer-events: none; 
+    cursor: pointer;
+}
+
+.doctor-area button{
+     width: 200px;
+     height: 43px;
+     margin-left:100px;
+     background-color: #870F10;
+     color: white;
+     font-size: larger;
+     border-color: #FFD1CF;
+     text-align: left;
+     padding: 5px;
+     cursor: pointer;
+}
+
+
+.doctor-search{
+    position: relative;
+display: inline-block;
+}
+.doctor-search img{
+    position: absolute;
+ width: 30px;
+ margin-top: 5px;
+right: 10px; 
+pointer-events: none; 
+cursor: pointer;
+}
+
+.results{
+
+    width: 415px;
+    margin-left: 300px;
+}
+
+
+ div .doctordetail{
+
+    margin-left:50px ;
+
+}
+
+
+.doctor-image-container img{
+    padding: 30px;
+    margin-left:50px ;
+}
+
+
+.below-doctor .para{
+
+      padding-top: 80px;
+      padding-left: 100px;
+      text-align: justify;
+       
+       
+
+}
+
+
+
+
+ .hi{
+    width: 43px;
+    height: 43px;
+   
+}
+
+
+.both{
+
+    
+    display: flex;
+    flex-direction:row-reverse;
+}
+
+.both img{
+    width: 400px;
+    height: 250px;
+    padding-right: 80px;
+}
+.stars{
+
+    margin-left: 850px;
+}
+.footer1{
+
+    height: 300px;
+    background-color: #FFD1CF;
+}
+.footer1 P{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 32PX;
+    color: #870F10;
+    padding-top: 40px;
+    
+}
+.footer3 img{
+
+    border-radius: 40px;
+width: 100px;
+height: 80px;
+margin-left: 100px;
+}
+.footer3{
+
+    margin: 30px;
+}
+
+.footer3 p{
+    color: black;
+    font-size: medium;
+    width: 800px;
+    text-align: justify;
+    margin-left: 100px;
+    padding-right: 100px;
+}
+
+.footer3 ul{
+
+
+    list-style-type: none;
+    padding-left: 100px;
+    
+}
+.footer3 li a{
+
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    
+}
+
+.footer3 li{
+    margin-top: 10px;
+
+}
+
+.footer3{
+
+
+    display: flex;
+    flex-direction: row;
+    
+}
+footer p{
+    text-align: center;
+    
+}
+footer{
+    background-color: #ffc8c6;
+}
+
+.doctor-filter {
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.doctor-details{
+display: flex;padding: 30px; flex-direction: row; background-color:#fae0de ; border-radius: 20px; margin-bottom: 30px;
+}
+
+.doctordetail{
+    margin-left: 100px;
+    font-size: large; 
+    padding-top: 25px;
+
+}
+.doctor-filter ul{
+
+    list-style-type: none;
+}
+
+ 
+
+
+ 
+ 
+ 
+ 

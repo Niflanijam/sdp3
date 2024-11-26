@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>RenalWise-findDoctor</title>
+    <link rel="stylesheet" href="{% static 'css/doctor.css' %}">
+    <script src="{% static 'javascript/doctor.js' %}" defer></script>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="logoimage">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+        </div>
+        <div class="bar">
+            <ul>
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Find Doctor</a></li>
+                <li><a href="#">Resource Center</a></li>
+                <li><a href="#">Kidney Donors</a></li>
+                <li><a href="#">Kidney Needer</a></li>
+
+            </ul>
+        </div>
+        <div class="account-arrow">
+            <img src="{% static 'images/account_circle.png' %}" alt="Account" class="arrow1">
+            <img src="{% static 'images/arrow_drop_down.png' %}" alt="Dropdown" class="arrow">
+        </div>
+    </div>
+
+    
+</body>
+</html>

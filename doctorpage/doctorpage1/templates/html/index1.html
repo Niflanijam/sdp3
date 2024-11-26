@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>RenalWise-findDoctor</title>
+    <link rel="stylesheet" href="{% static 'css/doctor.css' %}">
+    <script src="{% static 'javascript/doctor.js' %}" defer></script>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="logoimage">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+        </div>
+        <div class="bar">
+            <ul>
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Find Doctor</a></li>
+                <li><a href="#">Resource Center</a></li>
+                <li><a href="#">Kidney Donors</a></li>
+                <li><a href="#">Kidney Needer</a></li>
+
+            </ul>
+        </div>
+        <div class="account-arrow">
+            <img src="{% static 'images/account_circle.png' %}" alt="Account" class="arrow1">
+            <img src="{% static 'images/arrow_drop_down.png' %}" alt="Dropdown" class="arrow">
+        </div>
+    </div>
+
+    <div class="doctor-area">
+        <p>Find Doctors Near You</p>
+        <form method="get" action="{% url 'search_doctors' %}">
+            <div class="search-area">
+                <input type="text" name="place" placeholder="Input your place" id="autocomplete" value="{{ query }}">
+
+                <img src="{% static 'images/location_on.png' %}" alt="Location Icon">
+            </div>
+            <div class="doctor-search">
+                <button>Search</button>
+                <img src="{% static 'images/search.png' %}" alt="Search Icon">
+            </div>
+            <div id="results" class="results"
+                style="width: 415px; padding: 10px; margin-left: 390px ; background-color: #fad1cf; font-size: 18px; text-decoration: dotted; font-weight: bold; border-radius: 8px; cursor: pointer;">
+            </div>
+
+    </div>
+    </form>
+
+
+    <div class="doctor-filter">
+
+
+        <ul>
+
+            {% if query %}  <!-- Display results only if a query has been submitted -->
+            {% if doctors %}
+            {% for doctor in doctors %}
+           
+           
+            <li>
+                <div class="doctor-details">
+                    <div class="doctor-image-container" style="display: none;">
+
+                        <img src="{% static 'images/doctor2.png' %}" alt="Common Doctor Image" width="150px"
+                            height="150px">
+                    </div>
+                    <div class="doctordetail" >
+                        <div class="doctor-name" name="name" style="padding: 10px;"><img  style="margin-right: 20px;"
+                                src="{% static 'images/account_circle2.png' %}" alt="Location Icon" width="30px"
+                                height="30px">{{ doctor.name }}</div>
+                        <div class="doctor-address" name="place" style="padding: 10px;"><img style="margin-right: 20px;"
+                                src="{% static 'images/location_on.png' %}" alt="Location Icon" width="30px"
+                                height="30px">{{ doctor.address }}</div>
+                        <div class="doctor-phone-number" name="phone_number" style="padding: 10px;"><img
+                                src="{% static 'images/phonecall.png' %}" width="20px" height="20px" style="margin-right: 20px;"> {{ doctor.phone_number }}</div>
+                    </div>
+
+                </div>
+            </li>
+           
+            {% endfor %}
+            {% else %}
+                <li class="no-doctors" style="color: red; font-weight: bolder ; font-size: 18px; text-align: center;">No doctors available</li>
+            {% endif %}
+            {% endif %}
+   
+   
+   
+   
+            
+            
+        
+          
+          
+          
+        </ul>
+
+    </div>
+    </div>
+
+    <div class="both">
+        <img src="{% static 'images/ch2.png' %}" alt="image-doctor-one">
+        <div class="below-doctor">
+            <p class="para">Find the right specialist for your needs by selecting a doctor based on your location. Our
+                Find a Doctor feature allows you to search for qualified kidney specialists near you.Make an informed
+                choice and connect with qualified professionals who can provide the specialized care you need, right in
+                your area. Your path to better kidney health starts with finding the right local Lorem ipsum dolor, sit
+                amet consectetur adipisicing elit. Incidunt similique deserunt dolores est ipsa dolorum, eaque tempora
+                iste quis laborum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi quaerat asperiores,
+                rem, beatae tempora iure voluptates quo dolorem quidem reiciendis blanditiis repellendus eaque iste
+                mollitia eum! Unde porro ipsum voluptas?lorem
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium error aspernatur sequi? Libero
+                necessitatibus labore incidunt veniam distinctio assumenda unde, maxime eaque molestiae corporis,
+                cupiditate, a quasi sint culpa <nostrum class="lorem"></nostrum>enim facilis facere maiores amet soluta
+                adipisci veniam sunt quasi!Lorem</expert>
+            </p>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+    <div class="stars">
+        <img src="{% static 'images/star_filled.png' %}" alt="image-doctor-one" class="hi">
+        <img src="{% static 'images/star_filled.png' %}" alt="image-doctor-one" class="hi">
+        <img src="{% static 'images/star_filled.png' %}" alt="image-doctor-one" class="hi">
+        <img src="{% static 'images/star_filled.png' %}" alt="image-doctor-one" class="hi">
+        <img src="{% static 'images/star_filled.png' %}" alt="image-doctor-one" class="hi">
+    </div>
+
+
+    <div class="footer1">
+
+        <p>Welcome to RENALWISE</p>
+        <div class="footer3">
+            <img src="{% static 'images/logo.jpg' %}" alt="" width="40px">
+            <p>Meet your virtual assistant for kidney health. Our Kidney Health Chatbot is here to help you assess
+                symptoms, provide information, and guide you through understanding your kidney health. It's easy to use
+                and available 24/7 to answer your questions and offer support whenever you need it.</p>
+            <ul>
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Find Doctor</a></li>
+                <li><a href="#">Resource Center</a></li>
+                <li><a href="#">Kidney Donors</a></li>
+                <li><a href="#">Kidney Needer</a></li>
+
+
+            </ul>
+        </div>
+
+
+
+    </div>
+
+
+
+    <footer>
+
+        <p>copyright by @Bytebiginners</p>
+
+
+    </footer>
+</body>
+
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var doctors = document.querySelectorAll('ul li');
+
+        doctors.forEach(function (doctor) {
+            var imageContainer = doctor.querySelector('.doctor-image-container');
+            if (imageContainer) {
+                imageContainer.style.display = 'block'; // Show the image container
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Clear local storage on page load
+    localStorage.clear();  
+    sessionStorage.clear();  
+});
+
+
+
+    
+</script>
+
+</html>
