@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>RenalWise-findDoctor</title>
+    <link rel="stylesheet" href="./css/kidneyneeder.css">
+   
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="logoimage">
+            <img src="./image/logo.jpg" alt="Logo">
+        </div>
+        <div class="bar">
+            <ul>
+
+                <li><a href="file:///C:/Users/User/AppData/Desktop/sdp3%20project/project-homepage/project/index.html">Home</a></li>
+                <li><a href="http://localhost:8000/doctors/">Find Doctor</a></li>
+                <li><a href="file:///C:/Users/User/AppData/Desktop/sdp3%20project/resource_center/kidnyy/ResourceHome.html">Resource Center</a></li>
+                <li><a href="file:///C:/Users/User/AppData/Desktop/sdp3%20project/kidney%20donor/kidneydonor.html">Kidney Donors</a></li>
+                <li><a href="file:///C:/Users/User/AppData/Desktop/sdp3%20project/kidney%20Needer/kidneyneeder.html">Kidney Needer</a></li>
+
+            </ul>
+        </div>
+        <div class="account-arrow">
+            <img src="./image/account_circle.png" alt="Account" class="arrow1">
+            <img src="./image/arrow_drop_down.png" alt="Dropdown" class="arrow">
+        </div>
+    </div>
+<div class="kidney-head">
+    <p>Add kidney Needer Details</p>
+</div>
+
+<div class="agree">
+<div  class="agree1">
+    <p>       When adding your kidney needer details to our platform, it is essential that all information provided is accurate and true to the best of your knowledge. Participation is entirely voluntary, and we encourage only those who are genuinely willing to share their information to proceed.
+
+        Submitting your kidney Needer details is entirely voluntary. You should only provide your information if you are genuinely interested in becoming a donor. We do not encourage or pressure anyone into donation. If at any time you change your mind, you have the right to withdraw your details from our platform without any obligation or repercussions. The decision to donate is a deeply personal one and should be made without any external influence. </p>
+          <br>
+        <div id="toggle" class="toggle-switch"></div>
+        <p id="status" class="status">Disabled</p>
+       
+
+</div>
+<div class="whole-form">
+
+    <img src="./image/logo.jpg" alt="">
+
+<form action="">
+     
+    <input type="text" name="first_name" id="input1" placeholder="First Name"  >
+    
+    <input type="text" name="Last_name" id="input1" placeholder="Last Name"  >
+    <input type="text" name="User_Name" id="input2" placeholder="User Name"  >
+    <input type="date" name="date" id="input1" placeholder="Select Date"  >
+    <select id="input1" name="gender">
+        <option value="" disabled selected>Select your gender</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+      <input type="email" name="email" id="input2" placeholder="E-MAIL"  >
+      <input type="number" name="User_Name" id="input2" placeholder="Phone Number"  >
+      <input type="text" name="User_Name" id="input2" placeholder="Blood Type"  >
+      <input type="text" name="User_Name" id="input2" placeholder="Address"  >
+</form>
+
+
+</div>
+
+</div>
+
+
+<div class="footer1">
+    <p>Welcome to RENALWISE</p>
+    <div class="footer3">
+        <img src="./image/logo.jpg" width="40px">
+        <p>Meet your virtual assistant for kidney health. Our Kidney Health Chatbot is here to help you assess
+            symptoms, provide information, and guide you through understanding your kidney health. It's easy to use
+            and available 24/7 to answer your questions and offer support whenever you need it.</p>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Find Doctor</a></li>
+            <li><a href="#">Resource Center</a></li>
+            <li><a href="#">Kidney Donors</a></li>
+            <li><a href="#">Kidney Needer</a></li>
+        </ul>
+    </div>
+</div>
+<footer>
+    <p>copyright by @Bytebiginners</p>
+</footer>
+
+<script>
+    const toggleSwitch = document.getElementById('toggle');
+    const statusText = document.getElementById('status');
+
+    // Add event listener to toggle switch
+    toggleSwitch.addEventListener('click', () => {
+      toggleSwitch.classList.toggle('active');
+      statusText.textContent = toggleSwitch.classList.contains('active') ? 'Enabled' : 'Disabled';
+    });
+  </script>
+</body>
