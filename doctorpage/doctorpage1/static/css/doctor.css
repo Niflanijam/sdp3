@@ -10,6 +10,10 @@
     width:100px;
     
 }
+a:hover {
+    color: black; /* Change text color to black */
+    text-decoration: none; /* Remove underline (optional) */
+}
 
 .logoimage{
     padding-left: 30px;

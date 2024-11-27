@@ -16,7 +16,7 @@ class Doctor(models.Model):
     phone_number = models.CharField(max_length=11,validators=[validate_phone_number])
 
     class Meta:
-        db_table = 'doctor_info2'  # Name of your existing table
+        db_table = 'doctor_info2'  
 
     def __str__(self):
         return self.name
