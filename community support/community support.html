@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Support</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Dashboard Header Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+        }
+
+        .navbar .logo img {
+            height: 80px;
+            width: 80px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #b71c1c;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        .nav-links a::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 0;
+            background: #b71c1c;
+            transition: width 0.3s ease-in-out;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .profile-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-icon img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding: 40px 20px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .welcome-text {
+            padding-right: 20px;
+        }
+
+        .welcome-section h1 {
+            color: #b71c1c;
+        }
+
+        .welcome-text p {
+            position: relative;
+            padding-right: 200px;
+        }
+
+        .community-icon {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+        }
+
+        .community-icon img {
+            height: 150px;
+            width: auto;
+            border-radius: 10px;
+        }
+
+        /* Post Section */
+        .post-section {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .post {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .action {
+            cursor: pointer;
+            color: #b71c1c;
+            font-weight: bold;
+        }
+
+        .action:hover {
+            text-decoration: underline;
+        }
+
+        /* Post Input Section */
+        .post-input {
+            padding: 20px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column; /* Stack textarea and button vertically */
+            gap: 10px; /* Add space between textarea and button */
+        }
+
+        textarea {
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .post-btn {
+            align-self: flex-end; /* Align button to the right */
+            padding: 10px 20px;
+            background: #b71c1c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .post-btn:hover {
+            background: #d32f2f;
+        }
+
+        /* Footer Section */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px 40px;
+            background-color: #ffe4e1;
+            margin-top: 20px;
+        }
+
+        .footer-logo img {
+            height: 100px;
+            width: 100px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+        }
+
+        .footer-content {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .footer-content h1 {
+            color: #b71c1c;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .footer-links a:hover {
+            color: #b71c1c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="E:\3.1 sem\Project\project chatbot\Icons\icons\logo.jpg" alt="RenalWise Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FindDoctor</a></li>
+                <li><a href="#">ResourceCenter</a></li>
+                <li><a href="#">KidneyDonors</a></li>
+                <li><a href="#">KidneyNeeder</a></li>
+            </ul>
+            <div class="profile-icon">
+                <img src="E:\3.1 sem\Project\project chatbot\Icons\icons\account_circle2.png" alt="Profile">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-text">
+                <h1>Welcome to the RenalWise Community!</h1>
+                <p>
+                    We're thrilled to have you here. At RenalWise, we are dedicated to supporting individuals affected 
+                    by kidney conditions and fostering a vibrant, caring community. Whether you're here to seek information, 
+                    connect with others, or share your experiences, we offer a wealth of resources and support tailored to your needs.
+                </p>
+            </div>
+            <div class="community-icon">
+                <img src="E:\3.1 sem\Project\project chatbot\Icons\icons\chat5 1.png" alt="Community Icon">
+            </div>
+        </section>
+
+        <section class="post-section">
+            <div class="post">
+                <div class="user-info">
+                    <span class="username" id="username">👤 User</span>
+                    <span class="timestamp" id="timestamp">Timestamp</span>
+                </div>
+                <h3>What is the main cause of kidney failures?</h3>
+                <div class="post-actions">
+                    <span class="action">💬 Comments</span>
+                    <span class="action">🗑 Delete</span>
+                    <span class="action">✏ Edit</span>
+                </div>
+            </div>
+			<!-- Add Comment Section -->
+			<div class="add-comment-container">
+				<button class="add-comment-btn">
+					➕ Add a Comment
+			</button>
+			</div>
+		</div>
+        </section>
+
+        <section class="post-input">
+            <textarea placeholder="Post Your Questions..."></textarea>
+            <button class="post-btn">Post</button>
+        </section>
+    </main>
+
+    <!-- Updated Footer Section -->
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="E:\3.1 sem\Project\project chatbot\Icons\icons\logo.jpg" alt="RenalWise Logo">
+            </div>
+            <div class="footer-content">
+                <h1>Welcome to RENALWISE</h1>
+                <p>Meet your virtual assistant for kidney health. Our Kidney Health Chatbot is here to help you assess symptoms, provide information, and guide you through understanding your kidney health. It's easy to use and available 24/7 to answer your questions and offer support whenever you need it.</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FindDoctor</a></li>
+                <li><a href="#">ResourceCenter</a></li>
+                <li><a href="#">KidneyDonors</a></li>
+                <li><a href="#">KidneyNeeder</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to set dynamic user name and timestamp
+        const usernameElement = document.getElementById('username');
+        const timestampElement = document.getElementById('timestamp');
+
+        const username = 'John Doe'; // Replace this with dynamic data from the backend
+        const timestamp = new Date().toLocaleString();
+
+        usernameElement.textContent = `👤 ${username}`;
+        timestampElement.textContent = timestamp;
+    </script>
+</body>
+</html>
+
+
+
+
+
